@@ -30,12 +30,23 @@ See the [Visual Studio Code - Remote Development documentation](https://code.vis
 
 5. Once everything has started up, you should be able to access the application by visiting [http://localhost:8000/](http://localhost:8000/) in your web browser.
 
-## Troubleshooting
+## Running uvicorn
 
-If you encounter issues with running the application, try the following steps:
+1. Open a terminal window in Visual Studio Code
 
-1. Check the status of the container in the Visual Studio Code Terminal. There may be error messages indicating what went wrong.
+2. Navigate to the project directory where `main.py` is located
 
-2. Try rebuilding the container by running the "Remote-Containers: Rebuild Container" command in the Command Palette.
+3. Run the following command:
 
-3. If the problem persists, consult the [Visual Studio Code - Remote Development troubleshooting documentation](https://code.visualstudio.com/docs/remote/troubleshooting).
+    ```fastapi run```
+
+This command will run the uvicorn server and start the application with hot reloading enabled. This means that if you make any changes to your code, the server will automatically reload and reflect those changes.
+
+
+# Installing Package with pip and Updating requirements.txt
+
+To install a package using pip and update the requirements.txt file in one line, you can use the following command:
+
+```pip install <package_name> && pip freeze > requirements.txt```
+
+
