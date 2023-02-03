@@ -30,7 +30,7 @@ See the [Visual Studio Code - Remote Development documentation](https://code.vis
 
 5. Once everything has started up, you should be able to access the application by visiting [http://localhost:8000/](http://localhost:8000/) in your web browser.
 
-## Running uvicorn
+## Running fastapi app
 
 1. Open a terminal window in Visual Studio Code
 
