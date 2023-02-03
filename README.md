@@ -7,6 +7,7 @@ An example `Dockerfile` for a FastAPI app with a few dependencies:
  * Python 3.x
  * FastAPI
  * uvicorn
+ * [manage-fastapi](https://github.com/ycd/manage-fastapi)
 
 ## Prerequisites
 
