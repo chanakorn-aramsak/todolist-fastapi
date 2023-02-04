@@ -1,13 +1,11 @@
-# todolist-fastapi
-
-# todolist-fastapi with .devcontainer
+# todolist-fastapi with .devcontainer and [manage-fastapi](https://github.com/ycd/manage-fastapi)
 
 An example `Dockerfile` for a FastAPI app with a few dependencies:
 
  * Python 3.x
  * FastAPI
  * uvicorn
- * [manage-fastapi](https://github.com/ycd/manage-fastapi)
+ 
 
 ## Prerequisites
 
@@ -39,7 +37,7 @@ See the [Visual Studio Code - Remote Development documentation](https://code.vis
 
 3. Run the following command:
 
-    ```fastapi run```
+    ```uvicorn main:app --reload```
 
 This command will run the uvicorn server and start the application with hot reloading enabled. This means that if you make any changes to your code, the server will automatically reload and reflect those changes.
 
