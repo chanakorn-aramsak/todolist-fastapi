@@ -8,22 +8,23 @@ cursor = conn.cursor()
 
 # Execute a CREATE TABLE  for tasks table
 cursor.execute('''
-    CREATE TABLE tasks (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        task_name TEXT NOT NULL,
-        task_description TEXT NOT NULL,
-        status INTEGER NOT NULL
+    CREATE TABLE tasks(
+        id INTEGER PRIMARY KEY,
+        task_list_id INTEGER NOT NULL,
+        description TEXT NOT NULL,
+        is_completed INTEGER NOT NULL DEFAULT 0,
+        FOREIGN KEY(task_list_id) REFERENCES task_lists(id)
     );
 ''')
 
 # Execute a CREATE TABLE  for task_lists table
 cursor.execute('''
-    CREATE TABLE task_lists (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        list_name TEXT NOT NULL,
-        list_description TEXT NOT NULL
+    CREATE TABLE task_lists(
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL
     );
 ''')
+
 
 # Commit the transaction
 conn.commit()
