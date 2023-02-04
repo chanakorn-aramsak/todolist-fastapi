@@ -4,9 +4,10 @@ from typing import List, Union
 from pydantic import AnyHttpUrl, BaseSettings, validator
 
 
-
 class Settings(BaseSettings):
-    PROJECT_NAME: str
+    PROJECT_NAME: str = "My Todo App"
+    # The default value is an empty list, which means that CORS is disabled.
+    # You can change this to a list of allowed origins for your application, e.g. ["http://localhost:3000"]
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = []
 
     @validator("BACKEND_CORS_ORIGINS", pre=True)
@@ -16,8 +17,6 @@ class Settings(BaseSettings):
         elif isinstance(v, (list, str)):
             return v
         raise ValueError(v)
-
-    
 
     class Config:
         case_sensitive = True
