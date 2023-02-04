@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.core.config import settings
-
+from core.config import settings
+from api import tasks
 
 def get_application():
     _app = FastAPI(title=settings.PROJECT_NAME)
@@ -31,7 +31,7 @@ def get_application():
     )
 
     '''
-
+    _app.include_router(tasks.router)
     return _app
 
 
